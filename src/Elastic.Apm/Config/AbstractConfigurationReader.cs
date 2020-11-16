@@ -618,7 +618,7 @@ namespace Elastic.Apm.Config
 
 		protected string ParseEnvironment(ConfigurationKeyValue kv)
 		{
-			if (kv == null || string.IsNullOrEmpty(kv.Value)) return null;
+			if (kv == null || string.IsNullOrEmpty(kv.Value)) return DefaultValues.Environment;
 
 			return kv.Value;
 		}

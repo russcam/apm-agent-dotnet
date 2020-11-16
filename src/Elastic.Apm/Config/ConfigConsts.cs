@@ -24,6 +24,7 @@ namespace Elastic.Apm.Config
 			public const bool CaptureHeaders = true;
 			public const bool CentralConfig = true;
 			public const string CloudProvider = SupportedValues.CloudProviderAuto;
+			public const string Environment = "production";
 			public const int FlushIntervalInMilliseconds = 10_000; // 10 seconds
 			public const int MaxBatchEventCount = 10;
 			public const int MaxQueueEventCount = 1000;
