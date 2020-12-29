@@ -9,6 +9,7 @@ using Elastic.Apm.DatabaseTests.Common;
 using Elastic.Apm.EntityFrameworkCore;
 using Elastic.Apm.Tests.Mocks;
 using Elastic.Apm.Tests.TestHelpers;
+using Elastic.Apm.Test.Extensions;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
@@ -43,6 +44,9 @@ namespace Elastic.Apm.SqlClient.Tests
 		/// Makes sure that the db call is only captured once - so only 1 of them captures the call, the other one ignores it.
 		/// </summary>
 		[Fact]
+		[Category("docker")]
+		[Category("mssql")]
+		[Category("external_service")]
 		public void BothEfCoreAndSqlClientCapturingActive()
 		{
 			var dbContextOptionsBuilder = new DbContextOptionsBuilder<TestDbContext>();

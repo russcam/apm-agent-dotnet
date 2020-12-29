@@ -9,6 +9,7 @@ using Elastic.Apm.Helpers;
 using Elastic.Apm.Model;
 using Elastic.Apm.Tests.Mocks;
 using Elastic.Apm.Tests.TestHelpers;
+using Elastic.Apm.Test.Extensions;
 using FluentAssertions;
 using Xunit;
 

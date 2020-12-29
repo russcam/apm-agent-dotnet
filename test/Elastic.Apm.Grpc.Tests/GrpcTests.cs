@@ -7,6 +7,7 @@ using Elastic.Apm.AspNetCore.DiagnosticListener;
 using Elastic.Apm.DiagnosticSource;
 using Elastic.Apm.GrpcClient;
 using Elastic.Apm.Tests.Mocks;
+using Elastic.Apm.Test.Extensions;
 using FluentAssertions;
 using Grpc.Net.Client;
 using GrpcServiceSample;
@@ -28,6 +29,7 @@ namespace Elastic.Apm.Grpc.Tests
 		[InlineData(true)]
 		[InlineData(false)]
 		[Theory]
+		[Category("grpc")]
 		public async Task BasicGrpcTest(bool withDiagnosticSource)
 		{
 			var payloadSender = new MockPayloadSender();
@@ -95,6 +97,7 @@ namespace Elastic.Apm.Grpc.Tests
 		[InlineData(true)]
 		[InlineData(false)]
 		[Theory]
+		[Category("grpc")]
 		public async Task FailingGrpcCallTest(bool withDiagnosticSource)
 		{
 			var payloadSender = new MockPayloadSender();

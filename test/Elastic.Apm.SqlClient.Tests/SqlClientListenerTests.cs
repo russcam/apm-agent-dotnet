@@ -11,6 +11,7 @@ using Elastic.Apm.Api;
 using Elastic.Apm.DatabaseTests.Common;
 using Elastic.Apm.Tests.Mocks;
 using Elastic.Apm.Tests.TestHelpers;
+using Elastic.Apm.Test.Extensions;
 using FluentAssertions;
 using Xunit;
 using Xunit.Abstractions;
@@ -62,6 +63,9 @@ namespace Elastic.Apm.SqlClient.Tests
 
 		[Theory]
 		[MemberData(nameof(Connections))]
+		[Category("docker")]
+		[Category("mssql")]
+		[Category("external_service")]
 		public async Task SqlClientDiagnosticListener_ShouldCaptureSpan(string providerName, Func<string, DbConnection> connectionCreator)
 		{
 			const string commandText = "SELECT getdate()";
@@ -115,6 +119,9 @@ namespace Elastic.Apm.SqlClient.Tests
 
 		[Theory]
 		[MemberData(nameof(Connections))]
+		[Category("docker")]
+		[Category("mssql")]
+		[Category("external_service")]
 		public async Task SqlClientDiagnosticListener_ShouldCaptureErrorFromSystemSqlClient(string providerName,
 			Func<string, DbConnection> connectionCreator
 		)

@@ -4,6 +4,7 @@
 
 using System.IO;
 using Elastic.Apm.Report;
+using Elastic.Apm.Test.Extensions;
 using FluentAssertions;
 using Xunit;
 
@@ -12,6 +13,7 @@ namespace Elastic.Apm.DockerTests
 	public class BasicDockerTests
 	{
 		[Fact]
+		[Category("docker")]
 		public void ContainerIdExistsTest()
 		{
 			if (!File.Exists("/proc/self/cgroup")) return; //only run in Docker

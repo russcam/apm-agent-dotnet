@@ -17,6 +17,7 @@ using Elastic.Apm.Metrics;
 using Elastic.Apm.Metrics.MetricsProvider;
 using Elastic.Apm.Tests.Mocks;
 using Elastic.Apm.Tests.TestHelpers;
+using Elastic.Apm.Test.Extensions;
 using FluentAssertions;
 using Moq;
 using Xunit;
@@ -128,6 +129,7 @@ namespace Elastic.Apm.Tests
 		}
 
 		[Fact]
+		[Category("long_running")]
 		public async Task MetricsWithRealAgent()
 		{
 			// Note: If XunitOutputLogger is used with MetricsCollector it might cause issues because
@@ -163,6 +165,7 @@ namespace Elastic.Apm.Tests
 		/// </summary>
 		/// <returns></returns>
 		[Fact]
+		[Category("long_running")]
 		public async Task ToggleRecordingAndCaptureMetrics()
 		{
 			var logger = new NoopLogger();
@@ -271,6 +274,8 @@ namespace Elastic.Apm.Tests
 		}
 
 		[Fact]
+		[Category("gc")]
+		[Category("long_running")]
 		public void CollectGcMetrics()
 		{
 			var logger = new TestLogger(LogLevel.Trace);

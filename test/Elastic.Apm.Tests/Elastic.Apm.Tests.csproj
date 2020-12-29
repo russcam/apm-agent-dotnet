@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Elastic.Apm\Elastic.Apm.csproj" />
+    <ProjectReference Include="..\Elastic.Apm.Test.Extensions\Elastic.Apm.Test.Extensions.csproj" />
   </ItemGroup>
   
   <ItemGroup>

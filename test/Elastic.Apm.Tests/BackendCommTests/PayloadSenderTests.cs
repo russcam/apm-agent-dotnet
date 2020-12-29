@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -350,6 +351,7 @@ namespace Elastic.Apm.Tests.BackendCommTests
 
 		[Theory]
 		[MemberData(nameof(FlushInterval_test_variants))]
+		[Category("long_running")]
 		internal void FlushInterval_test(TestArgs args, int numberOfEventsToSend)
 		{
 			var batchSentBarrier = new Barrier(2);

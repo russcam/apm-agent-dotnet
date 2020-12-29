@@ -12,6 +12,7 @@ using DotNet.Testcontainers.Containers.Modules.Databases;
 using Elastic.Apm.Api;
 using StackExchange.Redis;
 using Elastic.Apm.Tests.Mocks;
+using Elastic.Apm.Test.Extensions;
 using FluentAssertions;
 
 namespace Elastic.Apm.StackExchange.Redis.Tests
@@ -19,6 +20,9 @@ namespace Elastic.Apm.StackExchange.Redis.Tests
 	public class ProfilingSessionTests
 	{
 		[DockerFact]
+		[Category("docker")]
+		[Category("redis")]
+		[Category("external_service")]
 		public async Task Capture_Redis_Commands_On_Transaction()
 		{
 			var containerBuilder = new TestcontainersBuilder<RedisTestcontainer>()
@@ -77,6 +81,9 @@ namespace Elastic.Apm.StackExchange.Redis.Tests
 		}
 
 		[DockerFact]
+		[Category("docker")]
+		[Category("redis")]
+		[Category("external_service")]
 		public async Task Capture_Redis_Commands_On_Span()
 		{
 			var containerBuilder = new TestcontainersBuilder<RedisTestcontainer>()
