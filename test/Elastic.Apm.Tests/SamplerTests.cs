@@ -98,9 +98,10 @@ namespace Elastic.Apm.Tests
 
 		[Theory]
 		[MemberData(nameof(RateVariantsToTest))]
+		[Category("long_running")]
 		public void DistributionShouldBeUniform(double rate)
 		{
-			const int total = 1_000_000;
+			const int total = 100_000;
 			var startCheckingAfter = Convert.ToInt32(total * 0.1); // i.e., after 10%
 			const double allowedDiffInRate = 0.01;
 
