@@ -20,7 +20,7 @@ do
 	if [[ $file == *"Elastic.Apm.AspNetFullFramework.Tests.csproj"* ]]; then
 		continue
 	fi
-	dotnet add "$file" package JunitXml.TestLogger --version 2.1.15
+	dotnet add "$file" package JunitXml.TestLogger --version 2.1.78
 done <  <(find . -name '*.csproj' -print0)
 
 # Run tests per project to generate the coverage report individually.
