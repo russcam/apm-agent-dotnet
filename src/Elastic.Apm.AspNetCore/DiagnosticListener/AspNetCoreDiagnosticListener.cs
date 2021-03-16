@@ -7,6 +7,7 @@ using Elastic.Apm.DiagnosticSource;
 using Elastic.Apm.Helpers;
 using Elastic.Apm.Logging;
 using Elastic.Apm.Model;
+using Elastic.Apm.Reflection;
 using Microsoft.AspNetCore.Http;
 
 namespace Elastic.Apm.AspNetCore.DiagnosticListener
